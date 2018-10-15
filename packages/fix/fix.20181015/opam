@@ -1,0 +1,24 @@
+opam-version: "2.0"
+maintainer: "francois.pottier@inria.fr"
+authors: [
+  "François Pottier <francois.pottier@inria.fr>"
+]
+homepage: "https://gitlab.inria.fr/fpottier/fix"
+dev-repo: "git+https://gitlab.inria.fr/fpottier/fix.git"
+bug-reports: "francois.pottier@inria.fr"
+build: [
+  ["dune" "build" "-p" name "-j" jobs]
+]
+depends: [
+  "ocaml"
+  "dune" {build}
+]
+synopsis: "An on-demand, incremental fixed point computation algorithm"
+url {
+  src:
+    "https://gitlab.inria.fr/fpottier/fix/repository/20181015/archive.tar.gz"
+  checksum: [
+    "md5=b0cf2dc3f72b02c6c9be4832f509ee3c"
+    "sha512=a1ac525067a2e65a45774fb7b05bc805de01b51094874362bc585dd10c3d505b279ea06fb6fefb7274f8be9f566d178b6c7b9a636a9a34680c962ce37d3651a0"
+  ]
+}
