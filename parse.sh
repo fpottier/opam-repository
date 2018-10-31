@@ -57,10 +57,18 @@ body() {
 }
 export -f body
 
+# Use gfind if available.
+
+if command -v gfind >/dev/null ; then
+  FIND=gfind
+else
+  FIND=find
+fi
+
 # This is the main parallel loop.
 
 echo "Building file list..."
-find $ARCHIVES -type f -regex ".*\.mli?" \
+$FIND $ARCHIVES -type f -regex ".*\.mli?" \
    | parallel --no-notice --pipe --block-size 8192 body
 
 # Statistics.
